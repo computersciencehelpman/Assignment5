@@ -1,6 +1,7 @@
 package com.coderscampus.arraylist;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class CustomArrayList<T> implements CustomList<T> {
 	Object[] items = new Object[10];
@@ -9,30 +10,30 @@ public class CustomArrayList<T> implements CustomList<T> {
 	
 
 	public boolean add(T item) {
-		// TODO Auto-generated method stub
-		//double size once array is full
-		if(getSize() == items.length) {
-			System.out.println("List is full");
-			
-			//Create a new array with double the size
-			Object[] moreItems = new Object[items.length *2];
-			
-			//Copy elements from the old array to the new one
-			System.arraycopy(items, 0, moreItems, 0, items.length);
-			
-			//Assign the new array to the items reference
-			items = moreItems;
-		}
-		
-		//Add the new item to the array
-		items[getSize()] = items;
-		
-		//Increment the size
-		size++;
-		
-		return true;
+	   
+		// Print the elements if the array is not full
+//	    if (size < items.length) {
+//	       
+//	        for (int i = 0; i < size; i++) {
+//	            System.out.println(items[i]);
+//	        }
+//	    }
+	    // Check if array is full 
+	    if (getSize() == items.length) {
+	        // Double the size of the array
+	        items = Arrays.copyOf(items, items.length * 2);
+	    }
+	    
+	    // Add the new item to the array
+	    items[size] = item;
+	    
+	    // Increment the size
+	    size++;
+	    
+	   
+	    
+	    return true;
 	}
-
 	
 	public int getSize() {
 		// TODO Auto-generated method stub
