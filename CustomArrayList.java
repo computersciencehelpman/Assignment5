@@ -37,7 +37,7 @@ public class CustomArrayList<T> implements CustomList<T> {
 	
 	public int getSize() {
 		// TODO Auto-generated method stub
-		int size = items.length;
+		
 		return size;
 	}
 
